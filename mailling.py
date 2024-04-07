@@ -6,8 +6,8 @@ def sendMail(subject,to_email):
 
     smtp_server = 'smtp.gmail.com'
     smtp_port = 587
-    smtp_user = 'hardikkumawat444@gmail.com'
-    smtp_password = 'bpjl gqyw yhpm sdpy'
+    smtp_user = 'user email'
+    smtp_password = 'your app pass'
 
     try:
         with open("loggings.txt", "r") as f:
@@ -43,7 +43,6 @@ def sendMail(subject,to_email):
 # if __name__ == "__main__":
 #     subject = 'this is a test'
 #     message = "hello this is also a test!"
-#     to_email = 'hardikkumawat444@gmail.com'
-#     # to_email = 'ashishpathak823@gmail.com'
+
 
 #     sendMail(subject,to_email)
