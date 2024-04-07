@@ -2,15 +2,22 @@ import smtplib
 from email.mime.text import MIMEText
 import os
 
-def sendMail(subject, message, to_email):
+def sendMail(subject,to_email):
 
     smtp_server = 'smtp.gmail.com'
-    smtp_port = 587 #this is the new port which allows for starttls based encryption instead of 25 son!
-    smtp_user = 'your email'
-    smtp_password = 'gmail app pass'
+    smtp_port = 587
+    smtp_user = 'hardikkumawat444@gmail.com'
+    smtp_password = 'bpjl gqyw yhpm sdpy'
+
+    try:
+        with open("loggings.txt", "r") as f:
+            content = f.read()
+
+    except Exception as e:
+        print(f"Error reading file --> {e}")
 
 
-    msg = MIMEText(message)
+    msg = MIMEText(content)
     msg['Subject'] = subject
     msg['From'] = smtp_user
     msg['To'] = to_email
@@ -33,9 +40,10 @@ def sendMail(subject, message, to_email):
     #     print(f"{e}")
 
 
-if __name__ == "__main__":
-    subject = 'this is a test'
-    message = "hello this is also a test!"
-    to_email = 'recievers emailID'
+# if __name__ == "__main__":
+#     subject = 'this is a test'
+#     message = "hello this is also a test!"
+#     to_email = 'hardikkumawat444@gmail.com'
+#     # to_email = 'ashishpathak823@gmail.com'
 
-    sendMail(subject, message, to_email)
+#     sendMail(subject,to_email)
